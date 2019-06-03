@@ -70,55 +70,55 @@ Sridhar Neelamraju$\dagger$$\ddagger$, Shachi Gosavi$\dagger$ and David Wales$\d
 
 \headerbox{1. Introduction}{name=introduction,column=0,row=0, span=3}{Proteins designed artificially have not had the benefit of evolution and are typically designed only to stabilise the native state. Natural proteins, on the other hand, have evolved to function as well as fold, and this is a likely source of  frustration. We study the potential energy landscapes of Top7, a model designed protein and S6, a natural protein of comparable size, using a combination of molecular dynamics (MD) and discrete path sampling (DPS)\cite{Neelamraju17a, Truong} and quantify the frustration resulting from the designed topology of Top7 with a frustration density parameter.   
 
-Topological frustration is particularly evident in knotted proteins. In order to avoid the common problem of chain-crossings that result for C$\alpha$ coarse-grained description, the doubly-nudged elastic band scheme (DNEB) is enhanced with Quasi-Continuous Interpolations (QCI) for coarse-grained structure-based models (SBMs). This allows us to find paths connecting distant conformations that are usually difficult to find with molecular dynamics alone. As an example, we construct kinetic transition networks for three different trefoil knots: MJ0366 (a trefoil knotted protein explored extensively in the past with MD), 1mxiS (a shallow trefoil knot formed by the truncated protein YibK) and 1mxiD (a deep trefoil knot formed by truncated protein YibK). The resulting kinetic transition network identifies topological traps along the potential energy landscapes of each of the three proteins studied. Further, in each case, we identify how high above the native state the process of knotting begins through application of a knot detection algorithm.}
+Topological frustration is particularly evident in knotted proteins. In order to avoid the common problstrem of chain-crossings that result for C$\alpha$ coarse-grained description, the doubly-nudged elastic band scheme (DNEB) is enhanced with Quasi-Continuous Interpolations (QCI) for coarse-grained structure-based models (SBMs). This allows us to find paths connecting distant conformations that are usually difficult to find with molecular dynamics alone. As an example, we construct kinetic transition networks for three different trefoil knots: MJ0366 (a trefoil knotted protein explored extensively in the past with MD), 1mxiS (a shallow trefoil knot formed by the truncated protein YibK) and 1mxiD (a deep trefoil knot formed by truncated protein YibK). The resulting kinetic transition network identifies topological traps along the potential energy landscapes of each of the three proteins studied. Further, in each case, we identify how high above the native state the process of knotting begins through application of a knot detection algorithm.}
 
-% \headerbox{2. Go-kit}{name=gokit,column=0,below=introduction,span=2}{
-% b\begin{equation}
-% \small
-% \begin{aligned}
-% U = &
-% \sum_{i=1,N-1}\frac{K_b}{2}\big(r_i-r_O\big) + \sum_{i=1,N-2}K{_\theta} \big( \theta _i - \theta_O\big )  + \sum_{i=1,N-3}\frac{K_{\phi}}{2}\big( 1-cos\big( 2\phi_i - \frac{\pi}{2}\big)\big) \\ 
-%   & +\sum_{i<j-3}^{Nat-C}\epsilon_{ij}\Big[5\Big( \frac{\sigma_{ij}}{r_{ij}}\Big)^{12} - 6\Big( \frac{\sigma_{ij}}{r_{ij}}\Big)^{10}  \Big] + \sum_{i<j-3}^{Non-C}\epsilon_{ij}\Big(\frac{C}{r_{ij}}\Big)^{12}
-% \label{eq:eq1}
-% \end{aligned}
-% \end{equation}
-% Artificial frustration is added with introducing non-native interactions among hydrophobic residues. \\
-% Effect of water molecules with a desolvation barrier potential\cite{}\\
-% Effect of side-chain interactions with a statistical two-bead Cheung-Thirumalai potential[2]. }
+\headerbox{Structure Based Models}{name=gokit,column=0,below=introduction,span=2}{
+\begin{equation}
+
+
+\begin{aligned}
+U = &
+\sum_{i=1,N-1}\frac{K_b}{2}\big(r_i-r_O\big) + \sum_{i=1,N-2}K{_\theta} \big( \theta _i - \theta_O\big )  + \sum_{i=1,N-3}\frac{K_{\phi}}{2}\big( 1-cos\big( 2\phi_i - \frac{\pi}{2}\big)\big) \\ 
+  & +\sum_{i<j-3}^{Nat-C}\epsilon_{ij}\Big[5\Big( \frac{\sigma_{ij}}{r_{ij}}\Big)^{12} - 6\Big( \frac{\sigma_{ij}}{r_{ij}}\Big)^{10}  \Big] + \sum_{i<j-3}^{Non-C}\epsilon_{ij}\Big(\frac{C}{r_{ij}}\Big)^{12}
+  \label{eq:eq1}
+\end{aligned}
+\end{equation}
+Artificial frustration is added with introducing non-native interactions among hydrophobic residues. 
+Effect of water molecules with a desolvation barrier potential\cite{Chan}. Effect of side-chain interactions with a statistical two-bead Cheung-Thirumalai potential\cite{Cheung}. See Gokit\cite{Neelamraju19a} for applying model to single domain proteins.}
 % \headerbox{2.Energy Landscape representations}{name=screen,span=1,column=2,below=introduction}{
 % \includegraphics[width=0.9\textwidth]{schematic.png}\\
 % Pictorial correspondence between a potential energy landscape and a disconnectivity graph following Becker and Karplus[4].(Top) A funnelled landscape is represented by a single stem (Palm-tree). A glassy energy landscape(bottom) is represented by multiple stems (Banyan tree). \\
 % \vspace{4pt}
 % }
 
-\headerbox{Top7 Vs S6:Molecular Dynamics}{name=Top7,column=0, span=1, below=introduction}{ % To reduce this block to 1 column width, remove 'span=2'
+\headerbox{Top7 Vs S6:Molecular Dynamics}{name=Top7,column=0, span=1, below=gokit}{ % To reduce this block to 1 column width, remove 'span=2'
 \begin{center}
 \includegraphics[width=0.8\linewidth]{S6_Top7.png} \\
 \end{center}
-No intermediates are found for the naturally evolved S6 protein while the free-energy landscape for Top7 shows distinct intermediates while folding with different flavours of coarse-grained models. This is in keeping with literature\cite{}. 
+In keeping with literature, no intermediates are found for the naturally evolved S6 protein while the free-energy landscape for Top7 shows distinct intermediates while folding with different flavours of coarse-grained Structure-Based Models.. 
 }
 
 \headerbox{Top7 Vs S6:Discrete Path Sampling}{name=Top7DPS,column=1, span=1, below=introduction}{ % To reduce this block to 1 column width, remove 'span=2'
 \begin{center}
-\includegraphics[width=0.8\linewidth]{tree_4.5.pdf} \\    
+\includegraphics[width=0.8\linewidth]{tree4_5.pdf} \\    
 \end{center}
-No intermediates are found for the naturally evolved S6 protein while the free-energy landscape for Top7 shows distinct intermediates while folding with different flavours of coarse-grained models. This is in keeping with literature.
+Disconnectivity graph representation of the ensemble of stationary points derived with DPS for the 4.5~\AA~cut-off contact map. Blue indicates the parts of the protein similar to the native state (N) and red indicates a high RMSD difference obtained from an RMSD-based per residue structural alignment.
 }
 \headerbox{Top7 Vs S6: Frustration Density}{name=Top7frust,column=2, span=1, below=introduction}{ % To reduce this block to 1 column width, remove 'span=2'
 \begin{center}
 \includegraphics[width=\linewidth]{frustrationdensity.jpeg} \\
 \end{center}
-No intermediates are found for the naturally evolved S6 protein while the free-energy landscape for Top7 shows distinct intermediates while folding with different flavours of coarse-grained models. This is in keeping with literature[5]. 
-}
+Frustration density, $\rho$, as a function of the energy interval for the disconnectivity graphs at $\delta$=0.5$\varepsilon$ (blue), 1$\varepsilon$ (orange), 2$\varepsilon$ (green) and 4$\varepsilon$ (red) . (a) Top7 - C$\alpha$ model, (b) S6 - C$\alpha$ model, SCM-based map, (c) Top7 - C$\alpha$-C$\beta$ model and (d) M7- C$\alpha$ model. The horizontal axis is scaled to δ=1$\varepsilon$. 
+For the Top7, a funnelled structure-based model representation shows distinct fluctuation in the frustration density parameter. These fluctuations are absent for S6 and M7}
 \headerbox{MJ0366: A simple trefoil knot}{name=MJ0366,column=0, span=1, below=Top7}{
 
 \begin{center}
 \includegraphics[width=\linewidth]{MJ0366.pdf} 
 \end{center}
-Text about many previous MD runs. What's new here? Estimagte of topological barriers, At what point knotting begins? etc. 
+Text about many previous MD runs. What's new here? Estimate of topological barriers, At what point knotting begins? etc. 
 }
 
-\headerbox{HI0766: Deep Vs Shallow  trefoil knots}{name=HI0766,column=1, span=2, below=Top7}{
+\headerbox{HI0766: Deep Vs Shallow  trefoil knots}{name=HI0766,column=1, span=2, below=Top7DPS}{
 
 \begin{center}
 \includegraphics[width=0.5\linewidth]{1mxi5_tree.pdf} 
