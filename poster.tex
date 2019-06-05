@@ -56,78 +56,78 @@ linewidth=2pt % Width of the border lines around content boxes
 %
 {
 \textsf %Sans Serif
-{Energy landscape of a designed protein, a shallow trefoil knot and a deep trefoil knot
+{Energy landscape of the designed protein Top7
 }
 }
 {\sf\vspace{0.2em}\\
-Sridhar Neelamraju$\dagger$$\ddagger$, Shachi Gosavi$\dagger$ and David Wales$\ddagger$
-\vspace{0.1em}\\
+Sridhar Neelamraju$\dagger$$\ddagger$, Shachi Gosavi$\dagger$ and David J. Wales$\ddagger$
+\vspace{-0.1em}\\
 \small{$\dagger$National Centre for Biological Sciences, Bangalore, India $\ddagger$ University Chemical Laboratories, Lensfield Road, University of Cambridge, UK.
 \vspace{0.2em}}
 }
 {\includegraphics[height=0.5in, width=1in]{logo_ncbs.jpg}} % University/lab logo
 	
 
-\headerbox{1. Introduction}{name=introduction,column=0,row=0, span=3}{Proteins designed artificially have not had the benefit of evolution and are typically designed only to stabilise the native state. Natural proteins, on the other hand, have evolved to function as well as fold, and this is a likely source of  frustration. We study the potential energy landscapes of Top7, a model designed protein and S6, a natural protein of comparable size, using a combination of molecular dynamics (MD) and discrete path sampling (DPS)\cite{Neelamraju17a, Truong} and quantify the frustration resulting from the designed topology of Top7 with a frustration density parameter.   
+\headerbox{Introduction}{name=introduction,column=0,row=0, span=3}{Proteins designed artificially have not had the benefit of evolution and are typically designed only to stabilise the native state. Natural proteins, on the other hand, have evolved to function as well as fold, and this is a likely source of  frustration. We study the potential energy landscapes of Top7, a model designed protein and S6, a natural protein of comparable size, using a combination of molecular dynamics (MD) and discrete path sampling (DPS)\cite{Neelamraju17a, Truong} and quantify the frustration resulting from the designed topology of Top7 with a frustration density parameter.   
 
 Topological frustration is particularly evident in knotted proteins. In order to avoid the common problstrem of chain-crossings that result for C$\alpha$ coarse-grained description, the doubly-nudged elastic band scheme (DNEB) is enhanced with Quasi-Continuous Interpolations (QCI) for coarse-grained structure-based models (SBMs). This allows us to find paths connecting distant conformations that are usually difficult to find with molecular dynamics alone. As an example, we construct kinetic transition networks for three different trefoil knots: MJ0366 (a trefoil knotted protein explored extensively in the past with MD), 1mxiS (a shallow trefoil knot formed by the truncated protein YibK) and 1mxiD (a deep trefoil knot formed by truncated protein YibK). The resulting kinetic transition network identifies topological traps along the potential energy landscapes of each of the three proteins studied. Further, in each case, we identify how high above the native state the process of knotting begins through application of a knot detection algorithm.}
 
-\headerbox{Structure Based Models}{name=gokit,column=0,below=introduction,span=2}{
+\headerbox{Structure Based Models}{name=gokit,column=0,below=introduction,span=2}
+{
+
 \begin{equation}
-
-
-\begin{aligned}
+\begin{aligned*}
 U = &
 \sum_{i=1,N-1}\frac{K_b}{2}\big(r_i-r_O\big) + \sum_{i=1,N-2}K{_\theta} \big( \theta _i - \theta_O\big )  + \sum_{i=1,N-3}\frac{K_{\phi}}{2}\big( 1-cos\big( 2\phi_i - \frac{\pi}{2}\big)\big) \\ 
   & +\sum_{i<j-3}^{Nat-C}\epsilon_{ij}\Big[5\Big( \frac{\sigma_{ij}}{r_{ij}}\Big)^{12} - 6\Big( \frac{\sigma_{ij}}{r_{ij}}\Big)^{10}  \Big] + \sum_{i<j-3}^{Non-C}\epsilon_{ij}\Big(\frac{C}{r_{ij}}\Big)^{12}
-  \label{eq:eq1}
-\end{aligned}
+ \end{aligned*}
 \end{equation}
-Artificial frustration is added with introducing non-native interactions among hydrophobic residues. 
-Effect of water molecules with a desolvation barrier potential\cite{Chan}. Effect of side-chain interactions with a statistical two-bead Cheung-Thirumalai potential\cite{Cheung}. See Gokit\cite{Neelamraju19a} for applying model to single domain proteins.}
-% \headerbox{2.Energy Landscape representations}{name=screen,span=1,column=2,below=introduction}{
-% \includegraphics[width=0.9\textwidth]{schematic.png}\\
-% Pictorial correspondence between a potential energy landscape and a disconnectivity graph following Becker and Karplus[4].(Top) A funnelled landscape is represented by a single stem (Palm-tree). A glassy energy landscape(bottom) is represented by multiple stems (Banyan tree). \\
-% \vspace{4pt}
-% }
 
-\headerbox{Top7 Vs S6:Molecular Dynamics}{name=Top7,column=0, span=1, below=gokit}{ % To reduce this block to 1 column width, remove 'span=2'
+Artificial frustration is added by introducing non-native attractive interactions among hydrophobic residues. 
+Effect of intercalated water molecules is approximated by a desolvation barrier potential\cite{Chan}. Effect of side-chain interactions with a statistical two-bead Cheung-Thirumalai potential\cite{Cheung}. See Gokit (github.com/gokit1/gokit)\cite{Neelamraju19a} for list of models implemented and application of these models to single domain proteins with Discrete Path Sampling.}
+
+\headerbox{Top7 Vs S6: Molecular Dynamics}{name=Top7,column=2, span=1, below=introduction}{ % To reduce this block to 1 column width, remove 'span=2'
 \begin{center}
 \includegraphics[width=0.8\linewidth]{S6_Top7.png} \\
 \end{center}
-In keeping with literature, no intermediates are found for the naturally evolved S6 protein while the free-energy landscape for Top7 shows distinct intermediates while folding with different flavours of coarse-grained Structure-Based Models.. 
+In keeping with literature, no intermediates are found for the naturally evolved S6 protein while the free-energy landscape for Top7 shows distinct intermediates while folding with different flavours of coarse-grained SBMs. 
 }
 
-\headerbox{Top7 Vs S6:Discrete Path Sampling}{name=Top7DPS,column=1, span=1, below=introduction}{ % To reduce this block to 1 column width, remove 'span=2'
+\headerbox{Top7:Discrete Path Sampling}{name=Top7DPS,column=0, span=1, below=gokit}{ % To reduce this block to 1 column width, remove 'span=2'
 \begin{center}
 \includegraphics[width=0.8\linewidth]{tree4_5.pdf} \\    
 \end{center}
-Disconnectivity graph representation of the ensemble of stationary points derived with DPS for the 4.5~\AA~cut-off contact map. Blue indicates the parts of the protein similar to the native state (N) and red indicates a high RMSD difference obtained from an RMSD-based per residue structural alignment.
+Disconnectivity graph representation of the ensemble of stationary points derived with DPS for Top7 (C$\alpha$, 4.5 \AA). Blue indicates the parts of the protein similar to the native state (N) and red indicates the RMSD difference from N. A1, A2 and A3 are kinetic traps found on the potential energy landscape.\\
 }
-\headerbox{Top7 Vs S6: Frustration Density}{name=Top7frust,column=2, span=1, below=introduction}{ % To reduce this block to 1 column width, remove 'span=2'
+\headerbox{Top7 Vs S6: Frustration Density}{name=Top7frust,column=1, span=1, below=gokit}{ % To reduce this block to 1 column width, remove 'span=2'
 \begin{center}
 \includegraphics[width=\linewidth]{frustrationdensity.jpeg} \\
 \end{center}
-Frustration density, $\rho$, as a function of the energy interval for the disconnectivity graphs at $\delta$=0.5$\varepsilon$ (blue), 1$\varepsilon$ (orange), 2$\varepsilon$ (green) and 4$\varepsilon$ (red) . (a) Top7 - C$\alpha$ model, (b) S6 - C$\alpha$ model, SCM-based map, (c) Top7 - C$\alpha$-C$\beta$ model and (d) M7- C$\alpha$ model. The horizontal axis is scaled to δ=1$\varepsilon$. 
-For the Top7, a funnelled structure-based model representation shows distinct fluctuation in the frustration density parameter. These fluctuations are absent for S6 and M7}
-\headerbox{MJ0366: A simple trefoil knot}{name=MJ0366,column=0, span=1, below=Top7}{
+Frustration density, $\rho$, as a function of the energy interval for disconnectivity graphs at $\delta$=0.5$\varepsilon$ (blue), 1$\varepsilon$ (orange), 2$\varepsilon$ (green) and 4$\varepsilon$ (red) . (a) Top7 - C$\alpha$ model, (b) S6 - C$\alpha$ model, SCM-based map, (c) Top7 - C$\alpha$-C$\beta$ model and (d) M7- C$\alpha$ model. The horizontal axis is scaled to $\delta$=1$\varepsilon$. For Top7, the SBM representation shows distinct fluctuation in the frustration density parameter. For S6, and M7 (a cooperatively folding protein designed to fold into the topology of Top7), the fluctuations are absent.}
+
+\headerbox{Probability contact maps: Top7}{name=PCM,column=0, span=1, below=Top7DPS}{ 
+\begin{center}
+\includegraphics[width=0.8\linewidth]{pcmap.pdf}
+\end{center}
+Four separate contact maps depicting the probability of formation of each contact in minima found from DPS. Addition of hydrophobic interactions destabilises the N-terminal region considerably. The SCM contact-map changes the folding route. % (a) Probability contact maps for ensemble of minima obtained from DPS  with different contact maps and flavours of SBMs our separate probability contact maps are plotted for potentials from the Cα-SBM with a 4.5 Å cutoff (labeled 4.5), Cα-SBM with non-native hydrophobic interactions (labeled 4.5 + hp), shadow-contact-map algorithm (SMOG server, labeled SCM), and M7 protein (SMOG server, labeled M7(SCM)).
+% (b) Four maps are plotted for ensembles derived from MD trajectories at around Tf for the Cα-SBM with a 4.5 Å cutoff (labeled 4.5), Cα-SBM with non-native hydrophobic interactions (labeled 4.5 + hp), shadow-contact-map algorithm (SMOG server, labeled SCM), and Cα-SBM (4.5 Å cutoff), where the contacts interact with a desolvation-barrier-type potential (labeled dsb). The color represents the average Q value of each contact in the ensemble. The experimentally known unfolding pathway proceeds from breaking the β1−β3 bonds that show the least propensity for forming in all the maps except for M7(SCM) and 6.5(SCM). These maps suggest cooperative folding behavior and a clear propensity for the C-terminus unfolding first.
+
+}
+\headerbox{MJ0366: A simple trefoil knot}{name=MJ0366,column=2, span=1, below=Top7}{
 
 \begin{center}
-\includegraphics[width=\linewidth]{MJ0366.pdf} 
+\includegraphics[width=0.8\linewidth]{MJ0366.pdf} 
 \end{center}
-Text about many previous MD runs. What's new here? Estimate of topological barriers, At what point knotting begins? etc. 
+Disconnectivity graph representation of a trefoil knotted protein. Structures A1 and A2 were identified as kinetic traps. A3 is a representative slip-knot. 
 }
 
-\headerbox{HI0766: Deep Vs Shallow  trefoil knots}{name=HI0766,column=1, span=2, below=Top7DPS}{
+% \headerbox{HI0766: Deep Vs Shallow  trefoil knots}{name=HI0766,column=1, span=2, below=Top7DPS}{
 
-\begin{center}
-\includegraphics[width=0.5\linewidth]{1mxi5_tree.pdf} 
-\end{center}
-Text about many previous MD runs. What's new here? Estimate of topological barriers, At what point knotting begins? etc. 
-}
-
-
-
+% \begin{center}
+% \includegraphics[width=0.5\linewidth]{1mxi5_tree.pdf} 
+% \end{center}
+% Text about many previous MD runs. What's new here? Estimate of topological barriers, At what point knotting begins? etc. 
+% }
 
 
 
@@ -141,7 +141,7 @@ Text about many previous MD runs. What's new here? Estimate of topological barri
 % \begin{center}
 % \includegraphics[width=0.6\linewidth]{conprob.png}\\
 % \end{center}
-% % Probability of formation of each contact on a contact-map derived from an ensemble of low-lying minima around the native-state derived from DPS. (a) C$\alpha$-SBM (4.5~\AA~), (b) C$\alpha$-SBM (6.5~\AA~) and (c)C$\alpha$-SBM (4.5~\AA~)+hydrophobic interactions. Addition of hydrophobic interactions destabilises the N-terminal region considerably.}
+% %.}
 
 % \headerbox{6. Conclusions and Outlook}
 % {name=references,column=0,span=1,below=md,above=bottom}{
@@ -167,13 +167,6 @@ Text about many previous MD runs. What's new here? Estimate of topological barri
 % %\nocite{*} % Insert publications even if they are not cited in the poster
 % [1] Liu and Chan, J. Mol. Biol. 349(4);872-889, 2005.[2] Cheung and Onuchic, J. Phys. Chem. B, 107(40):11193-11200,2003. [3] http://www-wales.ch.cam.ac.uk/PATHSAMPLE.[4] Becker and Karplus. J. Chem. Phys.,106(4):1495-1517,1997.,[5] Truong and Wolynes,J. Chem. Phys 139(12):121908,2013.
 % }
-
-
-
-
-
-
-
 
 
 \end{poster}
