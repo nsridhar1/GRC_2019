@@ -59,9 +59,7 @@ linewidth=2pt % Width of the border lines around content boxes
 Sridhar Neelamraju$\dagger$ $\ddagger$, Shachi Gosavi$\dagger$ and David J. Wales$\ddagger$\\
 \small{$\dagger$National Centre for Biological Sciences, Bangalore, India\\ $\ddagger$ University Chemical Laboratories, Lensfield Road, University of Cambridge, UK.}}
 {
-\includegraphics[width=3.5in]{logo.pdf}
-} % University/lab log
-\vspace{-0.2cm}
+\includegraphics[width=3.5in]{logo.pdf}}
 \headerbox{1. Introduction}{name=introduction,column=0,row=0, span=2}{Proteins designed artificially have not had the benefit of evolution and are typically designed only to stabilise the native state. Natural proteins, on the other hand, have evolved to function as well as fold in a minimally frustrated manner. Thus, potential energy landscapes (PELs) of designed proteins are likely to contain topological traps. Here, we study the potential energy landscapes of Top7, a model designed protein and S6, a natural protein of comparable size, using a combination of molecular dynamics (MD) and discrete path sampling (DPS)[1]. Possible kinetic traps and the energetic barriers separating them from the native state are elucidated. We quantify topological frustration resulting from the designed topology of Top7 with a frustration density parameter[2]. Topological frustration is also  evident in knotted proteins. Thus, we extend this methodology to locate topological traps on the PEL of two model trefoil knotted proteins.}
 \headerbox{2. Structure Based Models}{name=gokit,column=0,below=introduction,span=2}
 {
@@ -81,30 +79,9 @@ Effect of intercalated water molecules is approximated by a desolvation barrier 
 \begin{center}
  \includegraphics[width=0.6\linewidth]{disconn.pdf}
 \end{center}
-Potential energy landscapes are visualised as microcanonical disconnectivity graphs[3]. Each minimum corresponds to a vertical branch terminating at the corresponding potential energy. For a regular series of threshold energies spaced by a chosen value $\DeltaE$, a superbasin analysis is performed to separate the minima into disjoint sets, whose members can interconvert without exceeding a transition state energy above the current threshold. The branches join at nodes on the vertical (energy) axis as the superbasins merge. 
+\vspace{-0.4cm}
+The PEL is visualised as a microcanonical disconnectivity graph[4]. Each minimum corresponds to a vertical branch terminating at the corresponding potential energy. For a regular series of threshold energies spaced by a chosen value, $\Delta$E, a superbasin analysis is performed to separate the minima into disjoint sets, whose members can interconvert without exceeding a transition state energy above the current threshold. The branches join at nodes on the vertical (energy) axis as the superbasins merge. A fully funneled landscape is characterised by a ``Palm Tree'' like appearance. 
 }
-
-
-
-% To reduce this block to 1 column width, remove 'span=2% \begin{cent}
-% \includegraphics[width=0.9\linewidth]{hist.pd \\
-% \end{nter}
-% Normalized population of conformational states  as a function of the fraction of native contacts, Q , from a molecular dynamics trajectory at around Tf for various flavours of SBMs. In keeping with literature, no intermediates are found for the naturally evolved S6 protein (top) while the histogram for Top7 (bottom) shows distinct intermiates. 
-
-
-
-
-
-
-
-
-
-
-% \headerbox{3. Top7 Vs S6: Molecular Dynamics}{name=Top7,column=2, span=1, row=0}{ % To reduce this block to 1 column width, remove 'span=2% \begin{cent}
-% \includegraphics[width=0.9\linewidth]{hist.pd \\
-% \end{nter}
-% Normalized population of conformational states  as a function of the fraction of native contacts, Q , from a molecular dynamics trajectory at around Tf for various flavours of SBMs. In keeping with literature, no intermediates are found for the naturally evolved S6 protein (top) while the histogram for Top7 (bottom) shows distinct intermiates. 
-% }
 
 \headerbox{4. Top7:Discrete Path Sampling}{name=Top7DPS,column=0, span=1, below=gokit}{ % To reduce this block to 1 column width, remove 'span=2'
 \begin{center}
@@ -153,9 +130,9 @@ N-terminal in red and C-terminal in blue. Nodes in green indicate the structure 
 \renewcommand*{\bibfont}{\footnotesize}
 \bibfont{\textbf{1.} D. J. Wales, Mol. Phys. 100, 3285 (2002),}
 \bibfont{\textbf{2.} Neelamraju et al, J. Phys. Chem. B 122,51,12282-12291 (2018),}
-\bibfont{\textbf{3.} O. M. Becker and M. Karplus, J. Chem. Phys. 106, 1495 (1997),}
-\bibfont{\textbf{4.} Truong et al, J. Chem. Phys. 139,12, 121908 (2013),}
-\bibfont{\textbf{5.} Neelamraju et al, J. Inf. Chem. Model.,59,5, 1703-1708 (2019),}
+\bibfont{\textbf{3.} Neelamraju et al, J. Chem. Inf.  Model., 59, 5, 1703-1708 (2019),}
+\bibfont{\textbf{4.} O. M. Becker and M. Karplus, J. Chem. Phys. 106, 1495 (1997),}
+\bibfont{\textbf{5.} Truong et al, J. Chem. Phys. 139,12, 121908 (2013),}
 \bibfont{\textbf{6.} Noel et al, Proc. Nat. Acad. Sci., 107,35,15403-15408 (2010)}
 
 % \renewcommand{\bibsection}{}
