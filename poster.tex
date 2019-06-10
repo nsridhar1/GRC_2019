@@ -2,6 +2,7 @@
 \usepackage{lmodern}
 \usepackage[utf8]{inputenc} %unicode support
 \usepackage[T1]{fontenc}
+\usepackage{geometry}
 \usepackage{amsmath,amssymb}
 \selectcolormodel{cmyk}
 \usepackage{relsize}% For \smaller
@@ -14,7 +15,6 @@
 \usepackage{graphicx}
 \usepackage{tcolorbox}
 \usepackage{wrapfig}
-
 \graphicspath{{figures/}} % Directory in which figures are stored
 \newcommand{\compresslist}{%
 \setlength{\itemsep}{0pt}%
@@ -57,10 +57,8 @@ linewidth=2pt % Width of the border lines around content boxes
 }
 {\sf\\
 Sridhar Neelamraju$\dagger$ $\ddagger$, Shachi Gosavi$\dagger$ and David J. Wales$\ddagger$\\
-\small{$\dagger$National Centre for Biological Sciences, Bangalore, India\\ $\ddagger$ University Chemical Laboratories, Lensfield Road, University of Cambridge, UK.}}
-{
-\includegraphics[width=3.5in]{logo.pdf}
-}
+\small{$\dagger$National Centre for Biological Sciences, Bangalore, India\\ $\ddagger$ University Chemical Laboratories, Lensfield Road, University of Cambridge, UK.}}{\includegraphics[width=3.5in]{logo}}
+
 \headerbox{1. Introduction}{name=introduction,column=0,row=0, span=2}{Proteins designed artificially have not had the benefit of evolution and are typically designed only to stabilise the native state. Natural proteins, on the other hand, have evolved to function as well as fold in a minimally frustrated manner. Thus, potential energy landscapes (PELs) of designed proteins are likely to contain topological traps. Here, we study the potential energy landscapes of Top7, a model designed protein and S6, a natural protein of comparable size, using a combination of molecular dynamics (MD) and discrete path sampling (DPS)[1]. Possible kinetic traps and the energetic barriers separating them from the native state are elucidated. We quantify topological frustration resulting from the designed topology of Top7 with a frustration density parameter[2]. Topological frustration is also  evident in knotted proteins. Thus, we extend this methodology to locate topological traps on the PEL of two model trefoil knotted proteins.}
 \headerbox{2. Structure Based Models}{name=gokit,column=0,below=introduction,span=2}
 {
@@ -88,8 +86,9 @@ The PEL is visualised as a microcanonical disconnectivity graph[4]. Each minimum
 \begin{center}
 \includegraphics[width=0.8\linewidth]{tree4_5.pdf} \\   
 \end{center}
-Disconnectivity graph representation of the ensemble of stationary points derived with DPS for Top7 (C$\alpha$, 4.5 \AA). Blue indicates the parts of the protein similar to the native state (N) and red indicates the RMSD difference from N. A1, A2 and A3 are kinetic traps found on the potential energy landscape.\\
-}
+Disconnectivity graph representation of the ensemble of stationary points derived with DPS for Top7 (C$\alpha$, 4.5 \AA). Blue indicates the parts of the protein similar to the native state (N) and red indicates the RMSD difference from N. A1, A2 and A3 are kinetic traps found on the potential energy landscape.\\}
+
+
 \headerbox{5. Top7 Vs S6: Frustration Density}{name=Top7frust,column=1, span=1, below=gokit}{ % To reduce this block to 1 column width, remove 'span=2'
 \begin{center}
 \includegraphics[width=\linewidth]{frustrationdensity.jpeg} \\
@@ -100,15 +99,16 @@ Frustration density, $\rho$, as a function of the energy interval for disconnect
 \begin{center}
 \includegraphics[width=\linewidth]{pcmap.pdf}
 \end{center}
-\vspace{-0.3cm}
+\vspace{-0.4cm}
 Four separate contact maps depicting the probability of formation of each contact in the ensemble of minima found from DPS. Addition of hydrophobic interactions destabilises the N-terminal region considerably. The SCM method changes the folding route of Top7 making unfolding from the C-terminal more favourable. 
 }
 \headerbox{7. MJ0366: A simple trefoil knot}{name=MJ0366,column=2, span=1, below=PCM}{
 
 \begin{center}
-\includegraphics[width=0.76\linewidth]{MJ0366.pdf} 
+\includegraphics[width=0.7\linewidth]{MJ0366.pdf} 
 \end{center}
-Disconnectivity graph representation of a trefoil knotted protein. In keeping with literature [6], structures A1, A2 and A3 were identified as topological traps. Both slip-knotting and plugging mechanisms are observed (See video). First threading event proceeds from the N-terminal. ``Backtracking'' proceeds from the A1 basin. 
+\vspace{-0.5cm}
+Disconnectivity graph representation of a trefoil knotted protein. In keeping with literature [6], structures A1, A2 and A3 were identified as topological traps. Both slip-knotting and plugging mechanisms are observed (See video). First threading event proceeds from the N-terminal. ``Backtracking'' proceeds from the A1 and A2  basins. 
 }
 
 \headerbox{8.HI0766: A shallow and a deep trefoil knot}{name=HI0766,column=0, span=2, below=Top7DPS}{
@@ -118,7 +118,7 @@ N-terminal in red and C-terminal in blue. Nodes in green indicate the structure 
 \columnbreak
 \begin{itemize}
     \item {Disconnectivity graph representation of a shallow trefoil knot (left) and a deep trefoil knot (right) for the protein HI0766 (YibK,PDBID:1mxi). A shallow knot is defined as one containing 5 residues on either side of the knotted region while a deep knot contains 20 residues on either side of the knotted region. PEL for the deep knot is more frustrated than that of the shallow knot. }
-    \item{Each minimum is classified as a knot or an unknot. Knotting begins $\approx$30$\varepsilon$ above the native-state. Low-energy unknotted basins result in the ``backtracking'' mechanism. Multiple pathways leading to the knotted state are observed (See video). Threading proceeds from the C-terminal as observed in experiment. }
+    \item{\vspace{-0.5cm}Each minimum is classified as a knot or an unknot. Knotting begins $\approx$30$\varepsilon$ above the native-state. Low-energy unknotted basins result in the ``backtracking'' mechanism. Multiple pathways leading to the knotted state are observed (See video). Threading proceeds from the C-terminal as observed in experiment. }
     %\item{Traps obtained from DPS are depicted below the disconnectivity graphs. Colouring is identical to section 7.}
 \end{itemize}
 \end{multicols}
@@ -126,23 +126,21 @@ N-terminal in red and C-terminal in blue. Nodes in green indicate the structure 
 
 \headerbox{References}
 {name=references,column=2,span=1,below=MJ0366}{
-
-\small % Reduce the font size in this block#
+\Small
 \renewcommand*{\bibfont}{\footnotesize}
 \renewcommand*{\bibfont}{\footnotesize}
-\bibfont{\textbf{1.} D. J. Wales, Mol. Phys. 100, 3285 (2002),}
-\bibfont{\textbf{2.} Neelamraju et al, J. Phys. Chem. B 122,51,12282-12291 (2018),}
+\bibfont{\textbf{1.} D. J. Wales, Mol. Phys. 100, 3285 (2002),} 
+\bibfont{\textbf{2.} Neelamraju et al, J. Phys. Chem. B 122,51,12282-12291 (2018),} 
 \bibfont{\textbf{3.} Neelamraju et al, J. Chem. Inf.  Model., 59, 5, 1703-1708 (2019),}
 \bibfont{\textbf{4.} O. M. Becker and M. Karplus, J. Chem. Phys. 106, 1495 (1997),}
-\bibfont{\textbf{5.} Truong et al, J. Chem. Phys. 139,12, 121908 (2013),}
-\bibfont{\textbf{6.} Noel et al, Proc. Nat. Acad. Sci., 107,35,15403-15408 (2010)}
-
+\bibfont{\textbf{5.} Truong et al, J. Chem. Phys. 139,12, 121908 (2013), \textbf{6.} Noel et al, Proc. Nat. Acad. Sci., 107,35,15403-15408 (2010)}
+}
 % \renewcommand{\bibsection}{}
 % \bibliography{poster}
 % \bibliographystyle{plain}
 % %\nocite{*} % Insert publications even if they are not cited in the poster
 % [1] Liu and Chan, J. Mol. Biol. 349(4);872-889, 2005.[2] Cheung and Onuchic, J. Phys. Chem. B, 107(40):11193-11200,2003. [3] http://www-wales.ch.cam.ac.uk/PATHSAMPLE.[4] Becker and Karplus. J. Chem. Phys.,106(4):1495-1517,1997.,[5] Truong and Wolynes,J. Chem. Phys 139(12):121908,2013.
-}
+
 
 
 \end{poster}
