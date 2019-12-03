@@ -59,7 +59,7 @@ linewidth=2pt % Width of the border lines around content boxes
 Sridhar Neelamraju$\dagger$ $\ddagger$, Shachi Gosavi$\dagger$ and David J. Wales$\ddagger$ 
 \small{\\$\dagger$National Centre for Biological Sciences, Bangalore, India $\ddagger$ University Chemical Laboratories, Lensfield Road, University of Cambridge, UK.}}{\includegraphics[width=3.5in]{logo.pdf}}
 
-\headerbox{1. Introduction}{name=introduction,column=0,row=0, span=2}{Proteins designed artificially have not had the benefit of evolution and are typically designed only to stabilise the native state. Natural proteins, on the other hand, have evolved to function as well as fold in a minimally frustrated manner. Thus, potential energy landscapes (PELs) of designed proteins are likely to contain topological traps. Here, we study the potential energy landscapes of Top7, a model designed protein and S6, a natural protein of comparable size, using a combination of molecular dynamics (MD) and discrete path sampling (DPS)[1]. Possible kinetic traps and the energetic barriers separating them from the native state are elucidated. We quantify topological frustration resulting from the designed topology of Top7 with a frustration density parameter[2]. Topological frustration is also  evident in knotted proteins. Thus, we extend this methodology to locate topological traps on the PEL of two model trefoil knotted proteins.}
+\headerbox{1. Introduction}{name=introduction,column=0,row=0, span=2}{Proteins designed artificially have not had the benefit of evolution and are typically designed only to stabilise the native state. Natural proteins, on the other hand, have evolved to function as well as fold in a minimally frustrated manner. Thus, potential energy landscapes (PELs) of designed proteins are likely to contain topological traps. Here, we study the potential energy landscapes of Top7, a model designed protein, and S6, a natural protein of comparable size, using a combination of molecular dynamics (MD) and discrete path sampling (DPS)[1]. Possible kinetic traps and the energetic barriers separating them from the native state are elucidated. We quantify topological frustration resulting from the designed topology of Top7 with a frustration density parameter[2]. Topological frustration is also  evident in knotted proteins. Thus, we extend this methodology to locate topological traps on the PEL of two model trefoil knotted proteins.}
 \headerbox{2. Structure Based Models}{name=gokit,column=0,below=introduction,span=2}
 {
 \begin{equation}
@@ -72,7 +72,8 @@ U = &
 \end{aligned}
 \end{equation}
 Artificial frustration is added by introducing non-native attractive interactions among hydrophobic residues. 
-Effect of intercalated water molecules is approximated by a desolvation barrier potential. Effect of side-chain interactions with a statistical two-bead Cheung-Thirumalai potential. See ``Go-kit''[3] for list of models implemented and application of these models to single domain proteins with Discrete Path Sampling and Molecular Dynamics.}
+The effect of intercalated water molecules is approximated by a de
+solvation barrier potential and side-chain interactions are represented with a statistical two-bead Cheung-Thirumalai potential. See ``Go-kit''[3] for the list of models implemented and applications to single domain proteins with Discrete Path Sampling and Molecular Dynamics.}
 
 \headerbox{3. Visualising the energy landscape}{name=Top7,column=2, span=1, row=0}{ 
 \begin{center}
@@ -108,17 +109,17 @@ Four separate contact maps depicting the probability of formation of each contac
 \includegraphics[width=0.7\linewidth]{MJ0366.pdf} 
 \end{center}
 \vspace{-0.5cm}
-Disconnectivity graph representation of a trefoil knotted protein. In keeping with literature [6], structures A1, A2 and A3 were identified as topological traps. Both slip-knotting and plugging mechanisms are observed (See video). First threading event proceeds from the N-terminal. ``Backtracking'' proceeds from the A1 and A2  basins. 
+Disconnectivity graph representation of a trefoil knotted protein. In keeping with literature [6], structures A1, A2 and A3 were identified as topological traps. Both slip-knotting and plugging mechanisms are observed (See video). The first threading event proceeds from the N-terminus. ``Backtracking'' proceeds from the A1 and A2  basins. 
 }
 
 \headerbox{8.HI0766: A shallow and a deep trefoil knot}{name=HI0766,column=0, span=2, below=Top7DPS}{
 \begin{multicols}{2}
 \includegraphics[width=\linewidth,]{all.pdf}
-N-terminal in red and C-terminal in blue. Nodes in green indicate the structure is a 3$_1$ knot. 
+N-terminus in red and C-terminus in blue. Nodes in green indicate the structure is a 3$_1$ knot. 
 \columnbreak
 \begin{itemize}
-    \item {Disconnectivity graph representation of a shallow trefoil knot (left) and a deep trefoil knot (right) for the protein HI0766 (YibK,PDBID:1mxi). A shallow knot is defined as one containing 5 residues on either side of the knotted region while a deep knot contains 20 residues on either side of the knotted region. PEL for the deep knot is more frustrated than that of the shallow knot. }
-    \item{\vspace{-0.5cm}Each minimum is classified as a knot or an unknot. Knotting begins $\approx$30$\varepsilon$ above the native-state. Low-energy unknotted basins result in the ``backtracking'' mechanism. Multiple pathways leading to the knotted state are observed (See video). Threading proceeds from the C-terminal as observed in experiment. }
+    \item {Disconnectivity graph representation of a shallow trefoil knot (left) and a deep trefoil knot (right) for the protein HI0766 (YibK,PDBID:1mxi). A shallow knot is defined as one containing 5 residues on either side of the knotted region, while a deep knot contains 20 residues on either side of the knotted region. The PEL for the deep knot is more frustrated than that of the shallow knot. }
+    \item{\vspace{-0.5cm}Each minimum is classified as a knot or an unknot. Knotting begins around 30$\varepsilon$ above the native-state. Low-energy unknotted basins result in the ``backtracking'' mechanism. Multiple pathways leading to the knotted state are observed (See video). Threading proceeds from the C-terminal as observed in experiment. }
     %\item{Traps obtained from DPS are depicted below the disconnectivity graphs. Colouring is identical to section 7.}
 \end{itemize}
 \end{multicols}
